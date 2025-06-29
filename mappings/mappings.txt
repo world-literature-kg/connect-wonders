@@ -1,0 +1,41 @@
+## TEMPLATE SCRITTORE
+
+urw:{author-id} a prov:Person; 
+rdfs:label {author's name};
+urw:yearOfBirth urw:{year of birth};
+urw:countryOfBirth urw:{country in 3 digits ISO format} .
+
+pim:{situation-id} a urw:Birth ;
+dul:isSettingFor urw:{author-id};
+prov:wasDerivedFrom urb:source-id .
+
+urb:source-id a urb:WebManifestation;
+rdfs:label {url} .
+
+## TEMPLATE OPERA
+
+urb:{work-id} a frbr:Expression; rdfs:label {book's title} ;
+prov:wasAttributedTo urw:{author-id} ; urw:publishingLanguage {language in 2-digit iso code} ;
+urw:wasPublishedWhere urw:{country in 3 digits ISO format}, urw:{city-id};
+urw:wasPublishedWhen urw:{year of publication}  ;
+urw:wasPublishedBy urw:{publisher-id} .
+
+urw:{publisher-id} a prov:Organization; rdfs:label {publisher-name} .
+
+urb:{publication-id} a urb:Publication; dul:hasParticipant urb:{work-id} ; 
+prov:wasDerivedFrom urb:source-id .
+
+urb:source-id a urb:WebManifestation;
+rdfs:label {url} .
+
+## TEMPLATE TOPIC
+
+urb:{work-id} a frbr:Expression; rdfs:label {book's title} ;
+prov:wasAttributedTo urw:{author-id} ; urb:workTopic urb:{topic-1-id}, urb:{topic-2-id} ;
+urb:narrativeSetting urw:{place of setting-id} . ## come per gli altri esempi. ISO se è uno stato se no crei un id specifico per il posto
+
+urb:{topic-1-id} a frbr:Subject ; rdfs:comment {citation} .
+
+urb:{publication-id} a urb:Publication; dul:hasParticipant urb:{work-id} ; 
+prov:wasDerivedFrom urb:source-id .
+
