@@ -1,0 +1,283 @@
+PREFIX dul:    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX frbr:   <http://purl.org/vocab/frbr/core#>
+PREFIX fx:     <http://sparql.xyz/facade-x/ns/>
+PREFIX pim:    <http://purl.archive.org/urpim#>
+PREFIX prov:   <http://www.w3.org/ns/prov#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX urb:    <http://purl.archive.org/urbooks#>
+PREFIX urw:    <http://purl.archive.org/urwriters#>
+PREFIX xml:    <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX xyz:    <http://sparql.xyz/facade-x/data/>
+
+urb:source16  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://actualitte.com/livres/323675/extraits/reves-de-montagnes-jon-krakauer-9782258049451" .
+
+urb:publication16  rdf:type  urb:Publication;
+        dul:hasParticipant   urb:book16;
+        prov:wasDerivedFrom  urb:source16 .
+
+urw:publisher16  rdf:type  prov:Organization;
+        rdfs:label  "Les Presses de la Cité" .
+
+urb:book16  rdf:type            frbr:Expression;
+        rdfs:label              "Rêves de montagnes";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher16;
+        urw:wasPublishedWhen    "1999";
+        urw:wasPublishedWhere   "" , "FRA";
+        prov:wasAttributedTo    "Jon Krakauer" .
+
+urb:source15  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://bcu-lausanne.cantookstation.eu/resources/61691574235794493d2cd46f" .
+
+urb:publication15  rdf:type  urb:Publication;
+        dul:hasParticipant   urb:book15;
+        prov:wasDerivedFrom  urb:source15 .
+
+urw:publisher15  rdf:type  prov:Organization;
+        rdfs:label  "Arthaud" .
+
+urb:book15  rdf:type            frbr:Expression;
+        rdfs:label              "Montagnes humaines";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher15;
+        urw:wasPublishedWhen    "2021";
+        urw:wasPublishedWhere   "Paris" , "FRA";
+        prov:wasAttributedTo    "Jean-Christophe Rufin" .
+
+urb:source14  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://lemotetlereste.com/litteratures/lanaufrageedulacdesdentsblanches/" .
+
+urb:publication14  rdf:type  urb:Publication;
+        dul:hasParticipant   urb:book14;
+        prov:wasDerivedFrom  urb:source14 .
+
+urw:publisher14  rdf:type  prov:Organization;
+        rdfs:label  "Le Mot et le Reste" .
+
+urb:book14  rdf:type            frbr:Expression;
+        rdfs:label              "La naufragée du lac des dents blanches";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher14;
+        urw:wasPublishedWhen    "2016";
+        urw:wasPublishedWhere   "Marseille" , "FRA";
+        prov:wasAttributedTo    "Patrice Gain" .
+
+urb:source13  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://fr.scribd.com/doc/294422525/Vargas-Fred-1999-L-Homme-a-l-Envers" .
+
+urb:publication13  rdf:type  urb:Publication;
+        dul:hasParticipant   urb:book13;
+        prov:wasDerivedFrom  urb:source13 .
+
+urw:publisher13  rdf:type  prov:Organization;
+        rdfs:label  "Éditions Viviane Hamy" .
+
+urb:book13  rdf:type            frbr:Expression;
+        rdfs:label              "L&#039;homme à l&#039;envers";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher13;
+        urw:wasPublishedWhen    "1999";
+        urw:wasPublishedWhere   "Paris" , "FRA";
+        prov:wasAttributedTo    "Fred Vargas" .
+
+urb:source12  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://www.7switch.com/fr/ebook/9782889730162/l-enigme-de-la-chambre-622" .
+
+urb:publication12  rdf:type  urb:Publication;
+        dul:hasParticipant   urb:book12;
+        prov:wasDerivedFrom  urb:source12 .
+
+urw:publisher12  rdf:type  prov:Organization;
+        rdfs:label  "Rosie &amp;amp; Wolfe" .
+
+urb:book12  rdf:type            frbr:Expression;
+        rdfs:label              "L&#039;Énigme de la Chambre 622";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher12;
+        urw:wasPublishedWhen    "10/03/2022";
+        urw:wasPublishedWhere   "Geneve" , "CHE";
+        prov:wasAttributedTo    " Joël Dicker" .
+
+urb:source11  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://bcu-lausanne.cantookstation.eu/resources/618d1039235794602bb7fde4" .
+
+urb:publication11  rdf:type  urb:Publication;
+        dul:hasParticipant   urb:book11;
+        prov:wasDerivedFrom  urb:source11 .
+
+urw:publisher11  rdf:type  prov:Organization;
+        rdfs:label  "Slatkine Editions" .
+
+urb:book11  rdf:type            frbr:Expression;
+        rdfs:label              "Malatraix";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher11;
+        urw:wasPublishedWhen    "2021";
+        urw:wasPublishedWhere   "Geneva" , "CHE";
+        prov:wasAttributedTo    "Emmanuelle Robert" .
+
+urb:source10  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://bcu-lausanne.cantookstation.eu/resources/61f4e29fe9a9ae0001401417" .
+
+urb:publication10  rdf:type  urb:Publication;
+        dul:hasParticipant   urb:book10;
+        prov:wasDerivedFrom  urb:source10 .
+
+urw:publisher10  rdf:type  prov:Organization;
+        rdfs:label  "Grasset" .
+
+urb:book10  rdf:type            frbr:Expression;
+        rdfs:label              "Dans l&#039;amitié d&#039;une montagne";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher10;
+        urw:wasPublishedWhen    "2022";
+        urw:wasPublishedWhere   "Paris" , "FRA";
+        prov:wasAttributedTo    "Pascal Bruckner" .
+
+urb:source9  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://www.babelio.com/livres/Daudet-Tartarin-Sur-Les-Alpes/7663" .
+
+urb:publication9  rdf:type   urb:Publication;
+        dul:hasParticipant   urb:book9;
+        prov:wasDerivedFrom  urb:source9 .
+
+urw:publisher9  rdf:type  prov:Organization;
+        rdfs:label  "Gallimard" .
+
+urb:book9  rdf:type             frbr:Expression;
+        rdfs:label              "Tartarin sur les Alpes";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher9;
+        urw:wasPublishedWhen    "23/01/1997";
+        urw:wasPublishedWhere   "Paris" , "FRA";
+        prov:wasAttributedTo    "Alphonse Daudet" .
+
+urb:source8  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://www.babelio.com/livres/Giono-Le-deserteur-et-autres-recits/1427977" .
+
+urb:publication8  rdf:type   urb:Publication;
+        dul:hasParticipant   urb:book8;
+        prov:wasDerivedFrom  urb:source8 .
+
+urw:publisher8  rdf:type  prov:Organization;
+        rdfs:label  "Gallimard" .
+
+urb:book8  rdf:type             frbr:Expression;
+        rdfs:label              "Le déserteur et autres récits";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher8;
+        urw:wasPublishedWhen    "10/03/1978";
+        urw:wasPublishedWhere   "" , "FRA";
+        prov:wasAttributedTo    "Jean Giono" .
+
+urb:source7  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://books.google.ro/books?id=4dYBAAAAYAAJ&amp;amp;printsec=frontcover&amp;amp;redir_esc=y#v=onepage&amp;amp;q&amp;amp;f=false" .
+
+urb:publication7  rdf:type   urb:Publication;
+        dul:hasParticipant   urb:book7;
+        prov:wasDerivedFrom  urb:source7 .
+
+urw:publisher7  rdf:type  prov:Organization;
+        rdfs:label  "John Murray" .
+
+urb:book7  rdf:type             frbr:Expression;
+        rdfs:label              "Hungary and Transylvania: With Remarks on Their Condition, Social, Political and Economical";
+        urw:publishingLanguage  "EN";
+        urw:wasPublishedBy      urw:publisher7;
+        urw:wasPublishedWhen    "1836";
+        urw:wasPublishedWhere   "London" , "GBR";
+        prov:wasAttributedTo    "John Paget" .
+
+urb:source6  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://r.cantook.com/eden/sample/aHR0cHM6Ly93d3cuZWRlbmxpdnJlcy5mci9zYW1wbGUvNzUzMTM2L3dlYl9yZWFkZXJfbWFuaWZlc3Q_Zm9ybWF0X25hdHVyZT1lcHViJnNpZ2lkPTE3MjYzMTY1MzYmc2lnbmF0dXJlPTY2OTQ1YWI1Y2QxYzRiYzE1NGY1MDUzODBmYThjYjI0OWM4OGMyYmNkMGEyNzZmNWQ0YWNjM2Y4NDk1MTA2OTA" .
+
+urb:publication6  rdf:type   urb:Publication;
+        dul:hasParticipant   urb:book6;
+        prov:wasDerivedFrom  urb:source6 .
+
+urw:publisher6  rdf:type  prov:Organization;
+        rdfs:label  "Editions Zoé" .
+
+urb:book6  rdf:type             frbr:Expression;
+        rdfs:label              "Deux passions";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher6;
+        urw:wasPublishedWhen    "2022";
+        urw:wasPublishedWhere   "Geneve" , "CHE";
+        prov:wasAttributedTo    "S. Corinna Bille" .
+
+urb:source5  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://r.cantook.com/eden/sample/aHR0cHM6Ly93d3cuZWRlbmxpdnJlcy5mci9zYW1wbGUvNzUzMTM1L3dlYl9yZWFkZXJfbWFuaWZlc3Q_Zm9ybWF0X25hdHVyZT1lcHViJnNpZ2lkPTE3MjYzMTY1MzYmc2lnbmF0dXJlPWFmMzNkNTI3MzRhNzlmODczZDM2NWQzZGQyYWY5OTAwMjM0N2JjZGEwOWZmY2U4Y2NjNGIyZTY5MjkzODlmNmQ" .
+
+urb:publication5  rdf:type   urb:Publication;
+        dul:hasParticipant   urb:book5;
+        prov:wasDerivedFrom  urb:source5 .
+
+urw:publisher5  rdf:type  prov:Organization;
+        rdfs:label  "Editions Zoé" .
+
+urb:book5  rdf:type             frbr:Expression;
+        rdfs:label              "Théoda";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher5;
+        urw:wasPublishedWhen    "2022";
+        urw:wasPublishedWhere   "Geneve" , "CHE";
+        prov:wasAttributedTo    "S. Corinna Bille" .
+
+urb:source4  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://gallica.bnf.fr/ark:/12148/bpt6k48071378?rk=64378;0" .
+
+urb:publication4  rdf:type   urb:Publication;
+        dul:hasParticipant   urb:book4;
+        prov:wasDerivedFrom  urb:source4 .
+
+urw:publisher4  rdf:type  prov:Organization;
+        rdfs:label  "Éditions du Seuil" .
+
+urb:book4  rdf:type             frbr:Expression;
+        rdfs:label              "Le Cœur du voyage";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher4;
+        urw:wasPublishedWhen    "1982";
+        urw:wasPublishedWhere   "Paris" , "FRA";
+        prov:wasAttributedTo    "Pierre Moustiers" .
+
+urb:source3  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://gallica.bnf.fr/ark:/12148/bpt6k42233105?rk=21459;2" .
+
+urb:publication3  rdf:type   urb:Publication;
+        dul:hasParticipant   urb:book3;
+        prov:wasDerivedFrom  urb:source3 .
+
+urw:publisher3  rdf:type  prov:Organization;
+        rdfs:label  "H.L. Mermod" .
+
+urb:book3  rdf:type             frbr:Expression;
+        rdfs:label              "Derborence";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher3;
+        urw:wasPublishedWhen    "1934";
+        urw:wasPublishedWhere   "Lausanne" , "CHE";
+        prov:wasAttributedTo    "Charles-Ferdinand Ramuz" .
+
+urb:source2  rdf:type  urb:WebManifestation;
+        rdfs:label  "https://gallica.bnf.fr/ark:/12148/bpt6k80931c/f5.item" .
+
+urb:publication2  rdf:type   urb:Publication;
+        dul:hasParticipant   urb:book2;
+        prov:wasDerivedFrom  urb:source2 .
+
+urw:publisher2  rdf:type  prov:Organization;
+        rdfs:label  "B. Grasset" .
+
+urb:book2  rdf:type             frbr:Expression;
+        rdfs:label              "La Grande Peur dans la montagne ";
+        urw:publishingLanguage  "FR";
+        urw:wasPublishedBy      urw:publisher2;
+        urw:wasPublishedWhen    "1926";
+        urw:wasPublishedWhere   "Paris" , "FRA";
+        prov:wasAttributedTo    "Charles-Ferdinand Ramuz" .

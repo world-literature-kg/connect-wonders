@@ -1,0 +1,168 @@
+PREFIX dul:    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX fx:     <http://sparql.xyz/facade-x/ns/>
+PREFIX pim:    <http://purl.archive.org/urpim#>
+PREFIX prov:   <http://www.w3.org/ns/prov#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX urb:    <http://purl.archive.org/urbooks#>
+PREFIX urw:    <http://purl.archive.org/urwriters#>
+PREFIX xml:    <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX xyz:    <http://sparql.xyz/facade-x/data/>
+
+urb:webSource19  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://www.ebsco.com/research-starters/biography/jon-krakauer" .
+
+pim:birth19  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author19;
+        prov:wasDerivedFrom  urb:webSource19 .
+
+urw:author19  rdf:type      prov:Person;
+        rdfs:label          "John Krakauer";
+        urw:countryOfBirth  urw:USA;
+        urw:yearOfBirth     urw:1954 .
+
+urb:webSource18  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://www.fnac.com/Jean-Christophe-Rufin/ia86945/bio" .
+
+pim:birth18  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author18;
+        prov:wasDerivedFrom  urb:webSource18 .
+
+urw:author18  rdf:type      prov:Person;
+        rdfs:label          "Jean-Cristophe Rufin";
+        urw:countryOfBirth  urw:FRA;
+        urw:yearOfBirth     urw:1952 .
+
+urb:webSource17  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://www.etonnants-voyageurs.com/GAIN-Patrice.html" .
+
+pim:birth17  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author17;
+        prov:wasDerivedFrom  urb:webSource17 .
+
+urw:author17  rdf:type      prov:Person;
+        rdfs:label          "Patrice Gain";
+        urw:countryOfBirth  urw:FRA;
+        urw:yearOfBirth     urw:1961 .
+
+urb:webSource16  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://www.lepetitlitteraire.fr/auteurs/fred-vargas#:~:text=Fred%20Vargas%20%3A%20Biographie%20de%20l&#039;auteur&amp;amp;text=Arch%C3%A9ologue%20de%20formation%2C%20elle%20est,roman%20au%20festival%20de%20Cognac. " .
+
+pim:birth16  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author16;
+        prov:wasDerivedFrom  urb:webSource16 .
+
+urw:author16  rdf:type      prov:Person;
+        rdfs:label          "Fred Vargas";
+        urw:countryOfBirth  urw:FRA;
+        urw:yearOfBirth     urw:1957 .
+
+urb:webSource15  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://bcu-lausanne.cantookstation.eu/resources/5edb3b5d2357947d78f84779" .
+
+pim:birth15  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author15;
+        prov:wasDerivedFrom  urb:webSource15 .
+
+urw:author15  rdf:type      prov:Person;
+        rdfs:label          "Joël Dicker";
+        urw:countryOfBirth  urw:CHE;
+        urw:yearOfBirth     urw:1985 .
+
+urb:webSource14  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://www.babelio.com/auteur/Emmanuelle-Robert-II/603497" .
+
+pim:birth14  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author14;
+        prov:wasDerivedFrom  urb:webSource14 .
+
+urw:author14  rdf:type      prov:Person;
+        rdfs:label          "Emmanuelle Robert";
+        urw:countryOfBirth  urw:CHE;
+        urw:yearOfBirth     urw:1975 .
+
+urb:webSource13  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://www.fnac.com/Pascal-Bruckner/ia53880/bio" .
+
+pim:birth13  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author13;
+        prov:wasDerivedFrom  urb:webSource13 .
+
+urw:author13  rdf:type      prov:Person;
+        rdfs:label          "Pascal Bruckner";
+        urw:countryOfBirth  urw:FRA;
+        urw:yearOfBirth     urw:1948 .
+
+urb:webSource12  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://www.larousse.fr/encyclopedie/personnage/Alphonse_Daudet/115749" .
+
+pim:birth12  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author12;
+        prov:wasDerivedFrom  urb:webSource12 .
+
+urw:author12  rdf:type      prov:Person;
+        rdfs:label          "Alphonse Daudet";
+        urw:countryOfBirth  urw:FRA;
+        urw:yearOfBirth     urw:1840 .
+
+urb:webSource11  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://www.fnac.com/Jean-Giono/ia4195/bio" .
+
+pim:birth11  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author11;
+        prov:wasDerivedFrom  urb:webSource11 .
+
+urw:author11  rdf:type      prov:Person;
+        rdfs:label          "Jean Giono";
+        urw:countryOfBirth  urw:FRA;
+        urw:yearOfBirth     urw:1985 .
+
+urb:webSource10  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://blogs.reading.ac.uk/special-collections/tag/john-paget/" .
+
+pim:birth10  rdf:type        urw:Birth;
+        dul:isSettingFor     urw:author10;
+        prov:wasDerivedFrom  urb:webSource10 .
+
+urw:author10  rdf:type      prov:Person;
+        rdfs:label          "John Paget";
+        urw:countryOfBirth  urw:GBR;
+        urw:yearOfBirth     urw:1808 .
+
+urb:webSource9  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://catalogue.bnf.fr/ark:/12148/cb11885760b" .
+
+pim:birth9  rdf:type         urw:Birth;
+        dul:isSettingFor     urw:author9;
+        prov:wasDerivedFrom  urb:webSource9 .
+
+urw:author9  rdf:type       prov:Person;
+        rdfs:label          "Stéhanie Corinna Bille";
+        urw:countryOfBirth  urw:CHE;
+        urw:yearOfBirth     urw:1912 .
+
+urb:webSource8  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://data.bnf.fr/fr/ark:/12148/cb119171183" .
+
+pim:birth8  rdf:type         urw:Birth;
+        dul:isSettingFor     urw:author8;
+        prov:wasDerivedFrom  urb:webSource8 .
+
+urw:author8  rdf:type       prov:Person;
+        rdfs:label          "Pierre Moustiers";
+        urw:countryOfBirth  urw:FRA;
+        urw:yearOfBirth     urw:1924 .
+
+urb:webSource7  rdf:type  prov:WebManifestation;
+        rdfs:label  "https://data.bnf.fr/en/ark:/12148/cb119211165" .
+
+pim:birth7  rdf:type         urw:Birth;
+        dul:isSettingFor     urw:author7;
+        prov:wasDerivedFrom  urb:webSource7 .
+
+urw:author7  rdf:type       prov:Person;
+        rdfs:label          "Charles-Ferdinand Ramuz";
+        urw:countryOfBirth  urw:CHE;
+        urw:yearOfBirth     urw:1878 .

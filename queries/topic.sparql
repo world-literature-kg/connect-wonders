@@ -1,0 +1,50 @@
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX urb: <http://purl.archive.org/urbooks#>
+PREFIX urw: <http://purl.archive.org/urwriters#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pim: <http://purl.archive.org/urpim#>
+PREFIX frbr: <http://purl.org/vocab/frbr/core#>
+
+CONSTRUCT {
+    ?work a frbr:Expression.
+    ?work rdfs:label ?title.
+    ?work prov:wasAttributedTo ?author.
+    ?work urb:workTopic ?topic1, ?topic2.
+    ?work urb:narrativeSetting ?place.
+
+    ?topic1 a frbr:Subject.
+    ?topic1 rdfs:comment ?cit.
+
+    ?publication a urb:Publication.
+    ?publication dul:hasParticipant ?work.
+    ?publication prov:wasDerivedFrom ?source.
+
+} WHERE {
+    SERVICE <x-sparql-anything:csv.headers=true,location=../data/normalized/nf-subs-8-normalized.csv> {
+        []  xyz:id ?id;
+            xyz:Book_Title ?title;
+            xyz:Citation ?cit;
+            xyz:Place_of_Setting_ISO ?iso.
+    }
+
+    BIND(IRI(CONCAT(STR(urb:), "work", ?id)) AS ?work).
+    BIND(IRI(CONCAT(STR(urw:), "author", ?id)) AS ?author).
+    BIND(IRI(CONCAT(STR(urb:), "topic1_", ?id)) AS ?topic1).
+    BIND(IRI(CONCAT(STR(urb:), "topic2_", ?id)) AS ?topic2).
+    BIND(
+        IF(STRLEN(STR(?iso)) > 0,
+           IRI(CONCAT("http://publications.europa.eu/resource/authority/country/", ?iso)),
+           IRI(CONCAT(STR(urw:), "setting", ?id))
+        )
+        AS ?place
+    )
+    BIND(IRI(CONCAT(STR(urb:), "publication", ?id)) AS ?publication).
+    BIND(IRI(CONCAT(STR(urb:), "source", ?id)) AS ?source).
+}
