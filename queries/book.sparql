@@ -1,0 +1,52 @@
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX urb: <http://purl.archive.org/urbooks#>
+PREFIX urw: <http://purl.archive.org/urwriters#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pim: <http://purl.archive.org/urpim#>
+PREFIX frbr:   <http://purl.org/vocab/frbr/core#>
+
+CONSTRUCT {
+    ?book a frbr:Expression.
+    ?book rdfs:label ?title.
+    ?book prov:wasAttributedTo ?author.
+    ?book urw:publishingLanguage ?lang.
+    ?book urw:wasPublishedWhere ?country, ?city.
+    ?book urw:wasPublishedWhen ?year.
+    ?book urw:wasPublishedBy ?publisher.
+
+    ?publisher a prov:Organization.
+    ?publisher rdfs:label ?publisherName.
+
+    ?publication a urb:Publication.
+    ?publication dul:hasParticipant ?book.
+    ?publication prov:wasDerivedFrom ?source.
+
+    ?source a urb:WebManifestation.
+    ?source rdfs:label ?url.
+
+} WHERE {
+    SERVICE <x-sparql-anything:csv.headers=true,location=../data/normalized/nf-subs-7-normalized.csv> {
+        []  xyz:id ?id;
+            xyz:Book_Title ?title;
+            xyz:Author ?author;
+            xyz:lang_ISO ?lang;
+            xyz:Country_of_Publication_ISO ?country;
+            xyz:City_of_publication ?city;
+            xyz:Publication_date_of_the_copy_consulted ?year;
+            xyz:Publisher ?publisherName;
+            xyz:Source_it_must_be_a_website ?url.
+    }
+    BIND(IRI(CONCAT(STR(urb:), "book", ?id)) AS ?book)
+    BIND(IRI(CONCAT(STR(urw:), "publisher", ?id)) AS ?publisher)
+    BIND(IRI(CONCAT(STR(urb:), "publication", ?id)) AS ?publication)
+    BIND(IRI(CONCAT(STR(urb:), "source", ?id)) AS ?source)
+
+
+}

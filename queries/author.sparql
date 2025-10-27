@@ -1,0 +1,40 @@
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX urb: <http://purl.archive.org/urbooks#>
+PREFIX urw: <http://purl.archive.org/urwriters#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pim: <http://purl.archive.org/urpim#>
+
+CONSTRUCT {
+    ?author a prov:Person.
+    ?author rdfs:label ?name.
+    ?author urw:yearOfBirth ?wyob.
+    ?author urw:countryOfBirth ?wcob.
+
+    ?sit a urw:Birth.
+    ?sit dul:isSettingFor ?author.
+    ?sit prov:wasDerivedFrom ?source.
+    ?source a prov:WebManifestation.
+    ?source rdfs:label ?url.
+
+} WHERE {
+    SERVICE <x-sparql-anything:csv.headers=true,location=../data/normalized/nf-subs-5-normalized.csv> {
+        []  xyz:id ?id;
+            xyz:Authors_Name ?name;
+            xyz:Year_of_Birth ?yob;
+            xyz:Country_of_Birth_ISO ?iso;
+            xyz:Source_it_must_be_a_website ?url.
+    }
+
+    BIND(IRI(CONCAT(STR(urw:), "author", ?id)) AS ?author).
+    BIND(IRI(CONCAT(STR(pim:), "birth", ?id)) AS ?sit).
+    BIND(IRI(CONCAT(STR(urb:), "webSource", ?id)) AS ?source).
+    BIND(IRI(CONCAT(STR(urw:), ?yob )) AS ?wyob).
+    BIND(IRI(CONCAT(STR(urw:), ?iso )) AS ?wcob).
+}
